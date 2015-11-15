@@ -1,6 +1,6 @@
 TS3 Install Script
 ==================
-A small, simple, and lightweight script that will install a [TeamSpeak 3](https://www.teamspeak.com/teamspeak3) Server on any Debian-based linux distribution. This process is entirely automated and requires very little user input.
+A small, simple, and lightweight script that will install a [TeamSpeak 3](https://www.teamspeak.com/teamspeak3) Server on any Debian-based Linux distribution. This process is entirely automated and requires very little user input.
 
 **Do not use this script if you've already installed a TeamSpeak 3 Server!**  
 This script is only for **new** installations.
