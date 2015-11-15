@@ -1,5 +1,5 @@
-﻿#!/usr/bin/env bash
-# Version 1.0.0
+#!/usr/bin/env bash
+# Version 1.0.1
 # Licensed under MIT
 # https://github.com/IAreKyleW00t/ts3install/
 # Copyright (c) 2015 Kyle Colantonio <kyle10468@gmail.com>
@@ -36,7 +36,7 @@ fi
 printf "+-----------------------------------------+\n"
 printf "|    TeamSpeak 3 Server Install Script    |\n"
 printf "|           By: Kyle Colantonio           |\n"
-printf "|              Version 1.0.0              |\n"
+printf "|              Version 1.0.1              |\n"
 printf "+----------------------------------------+\n"
 printf "\n"
 printf "       ${RED}WARNING!! WARNING!! WARNING!!${NORM}\n"
@@ -57,12 +57,13 @@ printf "\n"
 mkdir -p "${TMP}"
 
 # Download TeamSpeak 3 Server tar
-printf "[1] Downloading TeamSpeak 3 Server..."
+printf "[1] Downloading TeamSpeak 3 Server...    "
 if [[ -f "${TMP}/${TS_TAR}" ]]; then
     # If the file exists, delete it
     rm "${TMP}/${TS_TAR}"
 fi
-curl -s "${TS_DL}" -o "${TMP}/${TS_TAR}"
+wget -P "${TMP}" --progress=dot "${TS_DL}" 2>&1 | grep --line-buffered "%" | sed -u -e "s,\.,,g" | awk '{printf("\b\b\b\b%4s", $2)}'
+printf "\b\b\b\b"
 printf " ${GREEN}DONE!${NORM}\n"
 
 # Check Download MD5
